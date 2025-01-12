@@ -3,79 +3,102 @@
 <head>
     <title>Mass Effect</title>
     <style>
-        /* General Styling */
+        /* General page styling */
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black; /* Set background to white */
-            color: white;
+            margin: 0; /* Removes default margin around the page */
+            font-family: Arial, sans-serif; /* Sets the font style for all text */
+            background-color: black; /* Changes the background color to black */
+            color: white; /* Sets the default text color to white */
         }
 
+        /* Main heading (Mass Effect) */
         h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-top: 30px;
+            text-align: center; /* Centers the text horizontally */
+            font-size: 3em; /* Increases the font size */
+            margin-top: 30px; /* Adds space above the heading */
         }
 
+        /* Subheading (Text transcription) */
         h2 {
-            text-align: center;
-            font-size: 2em;
-            margin: 20px 0;
+            text-align: center; /* Centers the text horizontally */
+            font-size: 2em; /* Sets the font size */
+            margin: 20px 0; /* Adds space above and below the subheading */
         }
 
+        /* Container for chapters */
         .chapters {
-            display: flex;
-            flex-wrap: wrap; /* Allows content to adjust for smaller screens */
-            justify-content: flex-start; /* Align chapters to the left */
-            padding: 20px;
-            gap: 20px;
+            display: flex; /* Uses flexbox to lay out child elements */
+            flex-wrap: wrap; /* Allows items to wrap onto new rows if there's not enough space */
+            justify-content: flex-start; /* Aligns items to the left */
+            padding: 20px; /* Adds padding inside the container */
+            gap: 20px; /* Adds space between the chapter cards */
         }
 
+        /* Each chapter container */
         .chapter {
-            position: relative;
-            width: 300px; /* Set a smaller width for each chapter */
-            height: 200px; /* Proportional height */
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+            position: relative; /* Allows us to position text within the chapter container */
+            width: 300px; /* Sets the fixed width for each chapter card */
+            height: 200px; /* Sets the fixed height for each chapter card */
+            border-radius: 10px; /* Adds rounded corners */
+            overflow: hidden; /* Ensures content doesn't spill outside the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
         }
 
+        /* Ensures the entire chapter is clickable */
+        .chapter a {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Inherits the parent’s text color */
+            display: block; /* Makes the link span the entire chapter area */
+            width: 100%; /* Takes full width of the chapter card */
+            height: 100%; /* Takes full height of the chapter card */
+        }
+
+        /* The image inside the chapter */
         .chapter img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image fits nicely within the container */
+            width: 100%; /* Makes the image fill the width of the container */
+            height: 100%; /* Makes the image fill the height of the container */
+            object-fit: cover; /* Ensures the image scales proportionally to fill the container */
         }
 
+        /* Text inside the chapter card */
         .chapter-text {
-            position: absolute;
-            bottom: 10px; /* Position text at the bottom of the image */
-            left: 10px;
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px black; /* Add shadow for readability */
+            position: absolute; /* Allows precise positioning within the chapter container */
+            bottom: 10px; /* Positions the text 10px from the bottom */
+            left: 10px; /* Positions the text 10px from the left */
+            color: white; /* Sets the text color to white */
+            font-size: 1.5em; /* Sets the font size */
+            font-weight: bold; /* Makes the text bold */
+            text-shadow: 2px 2px 5px black; /* Adds a shadow for better readability */
         }
 
+        /* Subtext below the main chapter title */
         .chapter-subtext {
-            font-size: 1em;
-            font-weight: normal;
-            text-shadow: 1px 1px 3px black;
+            font-size: 1em; /* Slightly smaller text */
+            font-weight: normal; /* Normal (non-bold) font weight */
+            text-shadow: 1px 1px 3px black; /* Adds a subtle shadow for readability */
         }
     </style>
 </head>
 <body>
+    <!-- Main heading -->
     <h1>Mass Effect</h1>
+
+    <!-- Subheading -->
     <h2>Text transcription</h2>
+
+    <!-- Chapter container -->
     <div class="chapters">
-        <!-- Chapter 1 -->
+        <!-- Single chapter -->
         <div class="chapter">
-            <img src="Eden Prime.png" alt="Eden Prime">
-            <div class="chapter-text">
-                Chapter 1
-                <div class="chapter-subtext">The Prologue: Eden Prime</div>
-            </div>
+            <!-- Link wrapping the entire chapter -->
+            <a href="eden-prime.html">
+                <img src="Eden Prime.png" alt="Eden Prime"> <!-- Chapter image -->
+                <div class="chapter-text">
+                    Prologue: Eden Prime <!-- Main chapter title -->
+                    <div class="chapter-subtext">The Beacon</div> <!-- Additional description -->
+                </div>
+            </a>
         </div>
-        <!-- Add more chapters here in the future -->
     </div>
 </body>
 </html>
