@@ -7,8 +7,8 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: white; /* Set background to white */
-            color: black;
+            background-color: black; /* Set background to white */
+            color: white;
         }
 
         h1 {
@@ -24,27 +24,31 @@
         }
 
         .chapters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allows content to adjust for smaller screens */
+            justify-content: flex-start; /* Align chapters to the left */
             padding: 20px;
+            gap: 20px;
         }
 
         .chapter {
             position: relative;
-            overflow: hidden;
+            width: 300px; /* Set a smaller width for each chapter */
+            height: 200px; /* Proportional height */
             border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
         }
 
         .chapter img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fits nicely within the container */
         }
 
         .chapter-text {
             position: absolute;
-            bottom: 10px; /* Position at the bottom */
+            bottom: 10px; /* Position text at the bottom of the image */
             left: 10px;
             color: white;
             font-size: 1.5em;
@@ -67,11 +71,11 @@
         <div class="chapter">
             <img src="Eden Prime.png" alt="Eden Prime">
             <div class="chapter-text">
-                Prologue: Eden Prime
-                <div class="chapter-subtext">The Beacon</div>
+                Chapter 1
+                <div class="chapter-subtext">The Prologue: Eden Prime</div>
             </div>
         </div>
-        <!-- Add more chapters here -->
+        <!-- Add more chapters here in the future -->
     </div>
 </body>
 </html>
