@@ -29,7 +29,7 @@
         .chapters {
             display: flex; /* Uses flexbox to lay out child elements */
             flex-wrap: wrap; /* Allows items to wrap onto new rows if there's not enough space */
-            justify-content: flex-start; /* Aligns items to the left */
+            justify-content: center; /* Aligns items to the left */
             padding: 20px; /* Adds padding inside the container */
             gap: 20px; /* Adds space between the chapter cards */
         }
@@ -37,8 +37,8 @@
         /* Each chapter container */
         .chapter {
             position: relative; /* Allows us to position text within the chapter container */
-            width: 300px; /* Sets the fixed width for each chapter card */
-            height: 200px; /* Sets the fixed height for each chapter card */
+            width: 90%; /* Sets the fixed width for each chapter card */
+            max-width: 715px; /* Sets the fixed height for each chapter card */
             border-radius: 10px; /* Adds rounded corners */
             overflow: hidden; /* Ensures content doesn't spill outside the container */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
@@ -62,20 +62,22 @@
 
         /* Text inside the chapter card */
         .chapter-text {
-            position: absolute; /* Allows precise positioning within the chapter container */
-            bottom: 10px; /* Positions the text 10px from the bottom */
-            left: 10px; /* Positions the text 10px from the left */
-            color: white; /* Sets the text color to white */
-            font-size: 1.5em; /* Sets the font size */
-            font-weight: bold; /* Makes the text bold */
-            text-shadow: 2px 2px 5px black; /* Adds a shadow for better readability */
-        }
+		position: absolute; /* Position it relative to the chapter box */
+		bottom: 0px; /* Position it 10px from the bottom */
+		left: 0px; /* Position it 10px from the left */
+		width: 100%; /* Make it span the full width of the chapter box */
+		color: black; /* Set the text color to white */
+		font-size: 2em; /* Set the font size */
+		font-weight: bold; /* Make the text bold */
+		background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
+		padding: 10px 15px; /* Add padding inside the text box */
+		border-radius: 5px; /* Round the corners of the background */
+		}
 
         /* Subtext below the main chapter title */
         .chapter-subtext {
             font-size: 1em; /* Slightly smaller text */
             font-weight: normal; /* Normal (non-bold) font weight */
-            text-shadow: 1px 1px 3px black; /* Adds a subtle shadow for readability */
         }
     </style>
 </head>
@@ -94,8 +96,8 @@
             <a href="eden-prime.html">
                 <img src="Eden Prime.png" alt="Eden Prime"> <!-- Chapter image -->
                 <div class="chapter-text">
-                    Prologue: Eden Prime <!-- Main chapter title -->
-                    <div class="chapter-subtext">The Beacon</div> <!-- Additional description -->
+                    The Prologue <!-- Main chapter title -->
+                    <div class="chapter-subtext">Eden Prime</div> <!-- Additional description -->
                 </div>
             </a>
         </div>
