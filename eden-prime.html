@@ -1,106 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mass Effect</title>
+    <meta charset="UTF-8">
+    <title>The Prologue: Eden Prime</title>
     <style>
-        /* General page styling */
         body {
-            margin: 0; /* Removes default margin around the page */
-            font-family: Arial, sans-serif; /* Sets the font style for all text */
-            background-color: black; /* Changes the background color to black */
-            color: white; /* Sets the default text color to white */
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Main heading (Mass Effect) */
+        /* Center the entire content within a background box */
+        .wrapper {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #1a1a1a; /* Dark background for the box */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
         h1 {
-            text-align: center; /* Centers the text horizontally */
-            font-size: 3em; /* Increases the font size */
-            margin-top: 30px; /* Adds space above the heading */
+            text-align: center;
+            margin-top: 0;
         }
 
-        /* Subheading (Text transcription) */
-        h2 {
-            text-align: center; /* Centers the text horizontally */
-            font-size: 2em; /* Sets the font size */
-            margin: 20px 0; /* Adds space above and below the subheading */
+        /* Styling for tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 5px;
         }
 
-        /* Container for chapters */
-        .chapters {
-            display: flex; /* Uses flexbox to lay out child elements */
-            flex-wrap: wrap; /* Allows items to wrap onto new rows if there's not enough space */
-            justify-content: center; /* Aligns items to the left */
-            padding: 20px; /* Adds padding inside the container */
-            gap: 20px; /* Adds space between the chapter cards */
+        .tab {
+            padding: 5px 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
-        /* Each chapter container */
-        .chapter {
-            position: relative; /* Allows us to position text within the chapter container */
-            width: 90%; /* Sets the fixed width for each chapter card */
-            max-width: 715px; /* Sets the fixed height for each chapter card */
-            border-radius: 10px; /* Adds rounded corners */
-            overflow: hidden; /* Ensures content doesn't spill outside the container */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+        .tab.active {
+            background-color: #666;
         }
 
-        /* Ensures the entire chapter is clickable */
-        .chapter a {
-            text-decoration: none; /* Removes underline from links */
-            color: inherit; /* Inherits the parent’s text color */
-            display: block; /* Makes the link span the entire chapter area */
-            width: 100%; /* Takes full width of the chapter card */
-            height: 100%; /* Takes full height of the chapter card */
+        /* Dynamic sections */
+        .dynamic {
+            display: none;
         }
 
-        /* The image inside the chapter */
-        .chapter img {
-            width: 100%; /* Makes the image fill the width of the container */
-            height: 100%; /* Makes the image fill the height of the container */
-            object-fit: cover; /* Ensures the image scales proportionally to fill the container */
+        .dynamic.active {
+            display: block;
         }
 
-        /* Text inside the chapter card */
-        .chapter-text {
-		position: absolute; /* Position it relative to the chapter box */
-		bottom: 0px; /* Position it 10px from the bottom */
-		left: 0px; /* Position it 10px from the left */
-		width: 100%; /* Make it span the full width of the chapter box */
-		color: black; /* Set the text color to white */
-		font-size: 2em; /* Set the font size */
-		font-weight: bold; /* Make the text bold */
-		background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
-		padding: 10px 15px; /* Add padding inside the text box */
-		border-radius: 5px; /* Round the corners of the background */
-		}
+        .character {
+            font-weight: bold;
+        }
 
-        /* Subtext below the main chapter title */
-        .chapter-subtext {
-            font-size: 1em; /* Slightly smaller text */
-            font-weight: normal; /* Normal (non-bold) font weight */
+        .action {
+            font-style: italic;
+        }
+
+        /* Styling for the transcript */
+        .transcript {
+            margin-bottom: 20px;
+        }
+
+        /* Add subtle horizontal dividers between sections */
+        hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <!-- Main heading -->
-    <h1>Mass Effect</h1>
+    <div class="wrapper">
+        <h1>The Prologue: Eden Prime</h1>
 
-    <!-- Subheading -->
-    <h2>Text transcription</h2>
-
-    <!-- Chapter container -->
-    <div class="chapters">
-        <!-- Single chapter -->
-        <div class="chapter">
-            <!-- Link wrapping the entire chapter -->
-            <a href="eden-prime.html">
-                <img src="Eden Prime.png" alt="Eden Prime"> <!-- Chapter image -->
-                <div class="chapter-text">
-                    The Prologue <!-- Main chapter title -->
-                    <div class="chapter-subtext">Eden Prime</div> <!-- Additional description -->
+        <div class="transcript">
+            <!-- Line 1 - Shepard's Background -->
+            <div>
+                <div class="tabs" data-group="background">
+                    <button class="tab active" onclick="switchContent('spacer-1', 'background')">Spacer</button>
+                    <button class="tab" onclick="switchContent('colonist-1', 'background')">Colonist</button>
+                    <button class="tab" onclick="switchContent('earthborn-1', 'background')">Earthborn</button>
                 </div>
-            </a>
+                <div class="dynamic active" id="spacer-1" data-group="background">
+                    <p><span class="character">Ambassador Udina:</span> Well, what about Shepard? He's a spacer. Lived aboard starships most of his life.</p>
+                    <p><span class="character">Captain Anderson:</span> Military service runs in the family. Both his parents were in the navy.</p>
+                </div>
+                <div class="dynamic" id="colonist-1" data-group="background">
+                    <p><span class="character">Ambassador Udina:</span> Well, what about Shepard? He grew up in the colonies.</p>
+                    <p><span class="character">Captain Anderson:</span> He knows how tough life can be out there. His parents were killed when slavers attacked Mindoir.</p>
+                </div>
+                <div class="dynamic" id="earthborn-1" data-group="background">
+                    <p><span class="character">Ambassador Udina:</span> Well, what about Shepard? Earthborn... but no record of his family.</p>
+                    <p><span class="character">Captain Anderson:</span> He was raised on the streets. Learned to look out for himself.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Line 2 - Shepard's Psychological Profile -->
+            <div>
+                <div class="tabs" data-group="profile">
+                    <button class="tab active" onclick="switchContent('survivor-2', 'profile')">Survivor</button>
+                    <button class="tab" onclick="switchContent('warhero-2', 'profile')">War Hero</button>
+					<button class="tab" onclick="switchContent('ruthless-2', 'profile')">Ruthless</button>
+                    
+                </div>
+                <div class="dynamic active" id="survivor-2" data-group="profile">
+					<p><span class="character">Admiral Hackett:</span> He saw his whole unit die on Akuze. He could have some serious emotional scars.</p>
+					<p><span class="character">Captain Anderson:</span> Every soldier has scars. Shepard's a survivor.</p>
+					<p><span class="character">Ambassador Udina:</span> Is that the kind of person we want protecting the galaxy?</p>
+					<p><span class="character">Captain Anderson:</span> That's the only kind of person who can protect the galaxy.</p>
+                </div>
+                <div class="dynamic" id="ruthless-2" data-group="profile">
+					<p><span class="character">Admiral Hackett:</span> He got most of his unit killed on Torfan.</p>
+					<p><span class="character">Captain Anderson:</span> He gets the job done. No matter what the cost.</p>
+					<p><span class="character">Ambassador Udina:</span> Is that the kind of person we want protecting the galaxy?</p>
+					<p><span class="character">Captain Anderson:</span> That's the only kind of person who can protect the galaxy.</p>
+                </div>
+                <div class="dynamic" id="warhero-2" data-group="profile">
+                    <p><span class="character">Admiral Hackett:</span> He proved himself during the Blitz. Held off enemy forces until reinforcements arrived.</p>
+					<p><span class="character">Captain Anderson:</span> He's the only reason Elysium is still standing."</p>
+					<p><span class="character">Ambassador Udina:</span> We can't question his courage.</p>
+					<p><span class="character">Captain Anderson:</span> Humanity needs a hero. And Shepard's the best we've got.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Static line at the end -->
+            <p><span class="character">Ambassador Udina:</span> I'll make the call.</p>
+			
+			<div
+			<!-- Static narration -->
+			<p><span class="action">In the year 2148, explorers on Mars discovered the remains of an ancient spacefaring civilization. In the decades that followed, these mysterious artifacts revealed startling new technologies, enabling travel to the furthest stars. The basis for this incredible technology was a force that controlled the very fabric of space and time.</span></p>
+			<p><span class="action">They called it the greatest discovery in human history.</span></p>
+			<p><span class="action">The civilizations of the galaxy call it...</span></p>
+			<p><span class="action">Mass Effect</span></p>
+			</div>
         </div>
     </div>
+
+    <script>
+        function switchContent(id, group) {
+            const groupTabs = document.querySelectorAll(`.tabs[data-group="${group}"] .tab`);
+            const groupSections = document.querySelectorAll(`.dynamic[data-group="${group}"]`);
+
+            groupTabs.forEach(tab => tab.classList.remove('active'));
+            groupSections.forEach(section => section.classList.remove('active'));
+
+            document.querySelector(`.tabs[data-group="${group}"] .tab[onclick*="${id}"]`).classList.add('active');
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </body>
 </html>
