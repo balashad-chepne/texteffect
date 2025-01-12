@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Eden Prime - Mass Effect</title>
+    <title>Mass Effect</title>
     <style>
+        /* General page styling */
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black; /* Background color matches the main page */
-            color: white;
-            text-align: center; /* Centers the text horizontally */
-            padding: 20px;
+            margin: 0; /* Removes default margin around the page */
+            font-family: Arial, sans-serif; /* Sets the font style for all text */
+            background-color: black; /* Changes the background color to black */
+            color: white; /* Sets the default text color to white */
         }
 
+        /* Main heading (Mass Effect) */
         h1 {
-            font-size: 3em; /* Large font for the title */
-            margin-top: 50px; /* Adds space above the title */
+            text-align: center; /* Centers the text horizontally */
+            font-size: 3em; /* Increases the font size */
+            margin-top: 30px; /* Adds space above the heading */
         }
 
-        p {
-            font-size: 1.5em; /* Slightly larger text for readability */
-            margin-top: 20px;
+        /* Subheading (Text transcription) */
+        h2 {
+            text-align: center; /* Centers the text horizontally */
+            font-size: 2em; /* Sets the font size */
+            margin: 20px 0; /* Adds space above and below the subheading */
         }
 
-        a {
-            color: #00aaff; /* Light blue color for the link */
-            text-decoration: none; /* Removes underline */
-            font-size: 1.2em;
+        /* Container for chapters */
+        .chapters {
+            display: flex; /* Uses flexbox to lay out child elements */
+            flex-wrap: wrap; /* Allows items to wrap onto new rows if there's not enough space */
+            justify-content: center; /* Aligns items to the left */
+            padding: 20px; /* Adds padding inside the container */
+            gap: 20px; /* Adds space between the chapter cards */
         }
 
-        a:hover {
-            text-decoration: underline; /* Adds underline when hovering */
+        /* Each chapter container */
+        .chapter {
+            position: relative; /* Allows us to position text within the chapter container */
+            width: 90%; /* Sets the fixed width for each chapter card */
+            max-width: 715px; /* Sets the fixed height for each chapter card */
+            border-radius: 10px; /* Adds rounded corners */
+            overflow: hidden; /* Ensures content doesn't spill outside the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+        }
+
+        /* Ensures the entire chapter is clickable */
+        .chapter a {
+            text-decoration: none; /* Removes underline from links */
+            color: inherit; /* Inherits the parent’s text color */
+            display: block; /* Makes the link span the entire chapter area */
+            width: 100%; /* Takes full width of the chapter card */
+            height: 100%; /* Takes full height of the chapter card */
+        }
+
+        /* The image inside the chapter */
+        .chapter img {
+            width: 100%; /* Makes the image fill the width of the container */
+            height: 100%; /* Makes the image fill the height of the container */
+            object-fit: cover; /* Ensures the image scales proportionally to fill the container */
+        }
+
+        /* Text inside the chapter card */
+        .chapter-text {
+		position: absolute; /* Position it relative to the chapter box */
+		bottom: 0px; /* Position it 10px from the bottom */
+		left: 0px; /* Position it 10px from the left */
+		width: 100%; /* Make it span the full width of the chapter box */
+		color: black; /* Set the text color to white */
+		font-size: 2em; /* Set the font size */
+		font-weight: bold; /* Make the text bold */
+		background-color: rgba(255, 255, 255, 0.6); /* White with 60% transparency */
+		padding: 10px 15px; /* Add padding inside the text box */
+		border-radius: 5px; /* Round the corners of the background */
+		}
+
+        /* Subtext below the main chapter title */
+        .chapter-subtext {
+            font-size: 1em; /* Slightly smaller text */
+            font-weight: normal; /* Normal (non-bold) font weight */
         }
     </style>
 </head>
 <body>
-    <h1>Prologue: Eden Prime</h1>
-    <p>Welcome to the Eden Prime mission page. Content coming soon!</p>
-    <p><a href="index.html">← Back to Main Page</a></p>
+    <!-- Main heading -->
+    <h1>Mass Effect</h1>
+
+    <!-- Subheading -->
+    <h2>Text transcription</h2>
+
+    <!-- Chapter container -->
+    <div class="chapters">
+        <!-- Single chapter -->
+        <div class="chapter">
+            <!-- Link wrapping the entire chapter -->
+            <a href="eden-prime.html">
+                <img src="Eden Prime.png" alt="Eden Prime"> <!-- Chapter image -->
+                <div class="chapter-text">
+                    The Prologue <!-- Main chapter title -->
+                    <div class="chapter-subtext">Eden Prime</div> <!-- Additional description -->
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
-
