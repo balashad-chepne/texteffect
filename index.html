@@ -3,64 +3,75 @@
 <head>
     <title>Mass Effect</title>
     <style>
-        /* Import Myriad Pro Bold font */
-        @font-face {
-            font-family: "Myriad Pro Bold";
-            src: url("MYRIADPRO-BOLD.OTF") format("opentype");
-        }
-
         /* General Styling */
         body {
             margin: 0;
-            font-family: "Myriad Pro Bold", Arial, sans-serif; /* Use Myriad Pro Bold */
-            background: url('Eden Prime.png') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Set background to white */
+            color: black;
         }
 
         h1 {
             text-align: center;
             font-size: 3em;
-            margin-top: 50px;
-            text-shadow: 2px 2px 5px black; /* Add shadow for better visibility */
+            margin-top: 30px;
         }
 
         h2 {
             text-align: center;
             font-size: 2em;
             margin: 20px 0;
-            text-shadow: 1px 1px 3px black; /* Add shadow for better visibility */
+        }
+
+        .chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
         }
 
         .chapter {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
         }
 
         .chapter img {
-            width: 80%; /* Adjust image size */
-            border: 2px solid white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .chapter p {
+        .chapter-text {
+            position: absolute;
+            bottom: 10px; /* Position at the bottom */
+            left: 10px;
+            color: white;
             font-size: 1.5em;
-            text-align: center;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px black; /* Add shadow for better visibility */
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black; /* Add shadow for readability */
+        }
+
+        .chapter-subtext {
+            font-size: 1em;
+            font-weight: normal;
+            text-shadow: 1px 1px 3px black;
         }
     </style>
 </head>
 <body>
     <h1>Mass Effect</h1>
     <h2>Text transcription</h2>
-    <div class="chapter">
-        <img src="Eden Prime.png" alt="Eden Prime">
-        <p>Prologue: Eden Prime</p>
+    <div class="chapters">
+        <!-- Chapter 1 -->
+        <div class="chapter">
+            <img src="Eden Prime.png" alt="Eden Prime">
+            <div class="chapter-text">
+                Prologue: Eden Prime
+                <div class="chapter-subtext">The Beacon</div>
+            </div>
+        </div>
+        <!-- Add more chapters here -->
     </div>
 </body>
 </html>
